@@ -16,8 +16,8 @@ This is a solution to the [Huddle landing page with single introductory section 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/raoufrofi/frontend-mentor-5th-project)
-- Live Site URL: [Add live site URL here](https://raoufrofi.github.io/frontend-mentor-5th-project)
+- Solution URL: [Click Here](https://github.com/raoufrofi/frontend-mentor-5th-project)
+- Live Site URL: [Live here](https://raoufrofi.github.io/frontend-mentor-5th-project)
 
 ## My process
 
