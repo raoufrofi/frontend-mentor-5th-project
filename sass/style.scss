@@ -1,0 +1,153 @@
+@use "globals" as g;
+
+body {
+  width: 100%;
+  height: auto;
+  background: {
+    color: g.$violet;
+    image: url("../assets/bg-mobile.svg");
+    repeat: no-repeat;
+    size: contain;
+    position: top;
+  }
+
+  @include g.breaking(tab) {
+    background-image: url("../assets/bg-desktop.svg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+main {
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+
+  @include g.breaking(tab) {
+    width: 100%;
+  }
+}
+
+header {
+  img {
+    width: 120px;
+  }
+
+  margin-bottom: 2rem;
+}
+
+.main {
+  display: grid;
+  width: min(90%, 600px);
+  margin-inline: auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  align-items: center;
+
+  @include g.breaking(tab) {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    width: auto;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &__content {
+    text-align: center;
+    color: #fff;
+
+    @include g.breaking(tab) {
+      text-align: left;
+    }
+    & > * {
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: g.$poppins;
+      font-weight: 600;
+
+      @include g.breaking(pc) {
+        font-size: 32px;
+      }
+    }
+
+    p {
+      font-family: g.$open-sans;
+      line-height: 1.5;
+      font-weight: 300;
+
+      @include g.breaking(pc) {
+        font-size: 18px;
+      }
+    }
+
+    a {
+      color: black;
+      display: inline-block;
+      background-color: #fff;
+      padding: 0.8rem 5rem;
+      border-radius: 50px;
+      font-family: g.$open-sans;
+      font-size: 14px;
+      transition: all 0.3s;
+
+      &:hover {
+        color: #fff;
+        background-color: g.$hover-color;
+      }
+
+      @include g.breaking(tab) {
+        font-size: 16px;
+        padding: 0.8rem 4rem;
+      }
+      @include g.breaking(pc) {
+        font-size: 18px;
+        padding: 1rem 4rem;
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  li {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: g.$hover-color;
+    }
+    &:hover > i {
+      color: g.$hover-color;
+    }
+  }
+
+  i {
+    color: #fff;
+    transition: all 0.3s;
+  }
+
+  @include g.breaking(tab) {
+    justify-content: right;
+  }
+}
